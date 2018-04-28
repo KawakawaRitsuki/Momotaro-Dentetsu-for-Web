@@ -1,0 +1,34 @@
+<html>
+    <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	var timer = window.setInterval(function() {
+	document.getElementById("hoge").src = "http://192.168.50.50:5588/example.png?" + (new Date() - 0);
+	}, 50);
+
+	function post(n) {
+            $.post( 'http://192.168.50.50:5588/click', { 'key': n }, function(data){} );
+	}
+	</script>
+    </head>
+    <body>
+	<img id="hoge" src="http://192.168.50.50:5588/example.png" alt="momo">
+
+	<img src="http://192.168.50.50:5588/controller.png" alt="controller" usemap="#sample">
+
+	<map name="sample">
+    	    <area href="javascript:post('7')" shape="rect" coords="106,92,133,117">
+            <area href="javascript:post('9')" shape="rect" coords="81,116,104,143">
+            <area href="javascript:post('8')" shape="rect" coords="106,143,132,168">
+            <area href="javascript:post('0')" shape="rect" coords="132,118,154,144">
+    
+            <area href="javascript:post('1')" shape="circle" coords="421,137,17">
+            <area href="javascript:post('2')" shape="circle" coords="377,169,17">
+            <area href="javascript:post('3')" shape="circle" coords="379,103,17">
+            <area href="javascript:post('4')" shape="circle" coords="335,135,17">
+
+            <area href="javascript:post('6')" shape="poly" coords="242,157,242,151,265,135,270,137,270,143,248,158">
+            <area href="javascript:post('5')" shape="poly" coords="194,157,193,151,216,134,221,137,220,143,198,158">
+	</map>
+    </body>
+</html>
